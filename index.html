@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+        <head>
+                <title> Registry Generator</title>
+                <script src="main.js"></script>
+        </head>
+        <body>
+                <form action="" method="get" class="form-visible">
+
+                        <div>
+                                <label for="app-name">Application's Name:</label>
+                                <input type="text" id="app-name" name="app_name">
+                        </div>
+                    <div>
+                        <label for="inst-url">URL of Installer:</label>
+                        <input type="text" id="inst-url" name="inst_url">
+                    </div>
+                    <div>
+                            <label for="inst-type">Type of Installer:</label>
+                            <select id="inst-type" name="inst_type">
+                                    <option value="as-is">.EXE executable</option>
+                                    <option value="nsis">NSIS Installer </option>
+                                    <option value="innosetup">InnoSetup Installer</option>
+                                    <option value="msi">.MSI Installer</option>
+                                    <option value="zip">.ZIP Archive</option>
+                            </select>
+
+                    </div>
+                    <div>
+                        <label for="version">Version:</label>
+                        <input type="text" id="version" name="inst_version"></input>
+                    </div>
+                    <div class="button">
+                            <button type="submit">Create Registry</button>
+                    </div>
+                </form>
+
+        </body>
+
+</html>
+
