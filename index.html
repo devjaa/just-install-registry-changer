@@ -3,21 +3,31 @@
         <head>
                 <title> Registry Generator</title>
                 <script src="main.js"></script>
+                <style>
+                        .form-visible{
+
+                        }
+                        .form-invisible{
+                                display: none;
+                        }
+                </style>
+
         </head>
         <body>
-                <form action="" method="get" class="form-visible">
+                <form action="" method="get" class="form-visible" id="app-form" onsubmit="document.getElementById('fs').value = 'true';">
+                        <caption><strong> ALL FIELDS ARE REQUIRED </strong></caption>
 
                         <div>
-                                <label for="app-name">Application's Name:</label>
-                                <input type="text" id="app-name" name="app_name">
+                                <label for="app-name">Application's Name: </label>
+                                <input type="text" id="app-name" name="app_name" required>
                         </div>
                     <div>
                         <label for="inst-url">URL of Installer:</label>
-                        <input type="text" id="inst-url" name="inst_url">
+                        <input type="text" id="inst-url" name="inst_url" required>
                     </div>
                     <div>
                             <label for="inst-type">Type of Installer:</label>
-                            <select id="inst-type" name="inst_type">
+                            <select id="inst-type" name="inst_type" required>
                                     <option value="as-is">.EXE executable</option>
                                     <option value="nsis">NSIS Installer </option>
                                     <option value="innosetup">InnoSetup Installer</option>
@@ -28,13 +38,24 @@
                     </div>
                     <div>
                         <label for="version">Version:</label>
-                        <input type="text" id="version" name="inst_version"></input>
+                        <input type="text" id="version" name="inst_version" required></input>
+                    </div>
+                    <input type="hidden" name="form_submitted" id="fs" value="false">
+                    <div style="display: none;" id="target-path">
+                            <label for="tp">Target Path(for zip):</label>
+                            <input type="text" id="tp" name="target_path"></input>
+                    
                     </div>
                     <div class="button">
                             <button type="submit">Create Registry</button>
                     </div>
                 </form>
+                <div id="registry"></div>
 
+                <script type="text/javascript">
+
+document.getElementById("inst-type").onchange = function (){if(document.getElementById("inst-type").value=="zip"){document.getElementById("target-path").style = "";} else {document.getElementById("target-path").style = "display: none;"}; document.getElementById("target-path").required = "required";};
+                </script>
         </body>
 
 </html>
