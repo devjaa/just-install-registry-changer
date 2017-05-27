@@ -15,5 +15,6 @@ Gets the [just-install registry](https://github.com/just-install/registry) from 
  - [ ] Add advanced installer type with all of its extras
  - [ ] Add option to change options
  - [ ] Make it so you can edit local registry/ different remote registry
- - [ ] Think of other TODOs
+ - [ ] Add option for shims
+ - [X] Think of other TODOs
  
