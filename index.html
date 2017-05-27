@@ -2,7 +2,10 @@
 <html>
         <head>
                 <title> Registry Generator</title>
+		<link rel="stylesheet" href="styles.css">
                 <script src="main.js"></script>
+		<link rel="stylesheet" href="highlightjs/styles/tomorrow-night-blue.css">
+		<script src="highlightjs/highlight.pack.js"></script>
                 <style>
                         .form-visible{
 
@@ -14,9 +17,9 @@
 
         </head>
         <body>
-                <form action="" method="get" class="form-visible" id="app-form" onsubmit="document.getElementById('fs').value = 'true';">
-                        <caption><strong> ALL FIELDS ARE REQUIRED </strong></caption>
-
+                <form action="" method="get" class="form-visible" id="app-form" onsubmit="document.getElementById('fs').value = 'true';" autocomplete="off">
+                        <caption><h2> ALL FIELDS ARE REQUIRED </h2></caption>
+			<caption><h3>for info about registry, see <a href="https://github.com/just-install/registry">this</a></h3></caption>
                         <div>
                                 <label for="app-name">Application's Name: </label>
                                 <input type="text" id="app-name" name="app_name" required>
@@ -43,14 +46,14 @@
                     <input type="hidden" name="form_submitted" id="fs" value="false">
                     <div style="display: none;" id="target-path">
                             <label for="tp">Target Path(for zip):</label>
-                            <input type="text" id="tp" name="target_path"></input>
+                            <input type="text" id="tp" name="target_path" value="null"></input>
                     
                     </div>
                     <div class="button">
                             <button type="submit">Create Registry</button>
                     </div>
                 </form>
-                <div id="registry"></div>
+                <div><pre><code class="json" id="registry"></code></pre></div>
 
                 <script type="text/javascript">
 

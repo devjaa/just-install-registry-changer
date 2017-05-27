@@ -1,0 +1,14 @@
+body{
+	background-color: black;
+	color: white;
+}
+a:visited{
+
+	color: lightblue;
+}
+a{
+	color: lightblue;
+}
+form{
+	text-align: center;
+}
