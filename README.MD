@@ -8,7 +8,7 @@ Gets the [just-install registry](https://github.com/just-install/registry) from 
 2. Clone [https://github.com/just-install/registry/](https://github.com/just-install/registry/), replace just-install.json with the outputted json, commit, push to your fork, and submit a pull request.
 3. *To test your new registry*: follow the directions [here](https://github.com/just-install/registry#how-to-test-changes-locally)
 ## TODO:
- - [ ] Make it pretty
+ - [X] Make it prettier
  - [ ] Add option for seperate x86 amd x64 URLS
  - [ ] Get this on just-install.it
  - [ ] Add custom type with all of its extras
