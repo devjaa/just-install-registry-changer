@@ -41,17 +41,26 @@
                             </select>
 
                     </div>
+			<div> 
+				<label for="arch"> Architecture of Installer </label>
+				<select id="arch" name="inst_arch" required>
+					<option value="both"> One installer for x86 and x66-64 </option>
+					<option value="just-64"> Only one installer, for x86-64 </option>
+					<option value="separate"> One installer for x86, another for x86-64 </option>
+				</select>
+			</div>
+					
                     <div>
                         <label for="version">Version:</label>
-                        <input type="text" id="version" name="inst_version" required></input>
+                        <input type="text" id="version" name="inst_version" required>
                     </div>
                     <input type="hidden" name="form_submitted" id="fs" value="false">
                     <div style="display: none;" id="target-path">
                             <label for="tp">Target Path(for zip):</label>
-                            <input type="text" id="tp" name="target_path" value="null"></input>
+                            <input type="text" id="tp" name="target_path" value="null">
                     
                     </div>
-                    <div class="button">
+                    <div class="buton">
                             <button type="submit">Create Registry</button>
                     </div>
                 </form>
@@ -59,7 +68,8 @@
 
                 <script type="text/javascript">
 
-document.getElementById("inst-type").onchange = function (){if(document.getElementById("inst-type").value=="zip"){document.getElementById("target-path").style = "";} else {document.getElementById("target-path").style = "display: none;"}; document.getElementById("target-path").required = "required";};
+			document.getElementById("inst-type").onchange = function (){if(document.getElementById("inst-type").value=="zip"){document.getElementById("target-path").style = "";} else {document.getElementById("target-path").style = "display: none;"}; document.getElementById("target-path").required = "required";};
+			
                 </script>
         </body>
 
