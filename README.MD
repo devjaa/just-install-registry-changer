@@ -9,7 +9,7 @@ Gets the [just-install registry](https://github.com/just-install/registry) from 
 3. *To test your new registry*: follow the directions [here](https://github.com/just-install/registry#how-to-test-changes-locally)
 ## TODO:
  - [X] Make it prettier
- - [ ] Add option for seperate x86 amd x64 URLS
+ - [ ] Add option for seperate x86 and x64 URLS
  - [ ] Get this on just-install.it
  - [ ] Add custom type with all of its extras
  - [ ] Add advanced installer type with all of its extras
