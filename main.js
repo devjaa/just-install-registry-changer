@@ -41,7 +41,7 @@ var modifyAndDisplayRegistry = function(registryJSON, add){
 function orderedStringify(obj) { const allKeys = []; JSON.stringify(obj, (k, v) => { allKeys.push(k); return v; }); return JSON.stringify(obj, allKeys.sort(), 2); }
 window.onload = docLoaded;
 var cp2clipboard = function (element) {
-	var rng = document.createRange();
+	var range = document.createRange();
 	range.selectNodeContents(element);
 	element.hidden = false;
 	var selection = window.getSelection();
