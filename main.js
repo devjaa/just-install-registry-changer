@@ -40,3 +40,9 @@ var modifyAndDisplayRegistry = function(registryJSON, add){
 //from https://stackoverflow.com/questions/16167581/sort-object-properties-and-json-stringify#comment73545624_40646557
 function orderedStringify(obj) { const allKeys = []; JSON.stringify(obj, (k, v) => { allKeys.push(k); return v; }); return JSON.stringify(obj, allKeys.sort(), 2); }
 window.onload = docLoaded;
+var cp2clipboard = function (element) {
+	element.hidden = false;
+	element.select();
+	document.execCommand('copy');
+	window.alert(element.id + "'s contents have been copied to your clipboard");
+};
