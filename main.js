@@ -41,8 +41,13 @@ var modifyAndDisplayRegistry = function(registryJSON, add){
 function orderedStringify(obj) { const allKeys = []; JSON.stringify(obj, (k, v) => { allKeys.push(k); return v; }); return JSON.stringify(obj, allKeys.sort(), 2); }
 window.onload = docLoaded;
 var cp2clipboard = function (element) {
+	var rng = document.createRange();
+	range.selectNodeContents(element);
 	element.hidden = false;
-	element.select();
+	var selection = window.getSelection();
+	selection.removeAllRanges();
+	selection.addRange(range);
 	document.execCommand('copy');
+	
 	window.alert(element.id + "'s contents have been copied to your clipboard");
 };
