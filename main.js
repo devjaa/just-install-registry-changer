@@ -26,7 +26,7 @@ if(uvars["form_submitted"] == "true") {
 			});
                 }
         };
-        xhttp.open("GET", "https://rawgit.com/just-install/registry/master/just-install.json", true);
+        xhttp.open("GET", "https://registry.just-install.it/just-install.json", true);
         xhttp.send();
 
 } else console.log("form incomplete");
