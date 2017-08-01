@@ -29,7 +29,13 @@
                     <div>
                         <label for="inst-url">URL of Installer:</label>
                         <input type="url" id="inst-url" name="inst_url" required>
+                    </div></div>
+                        <div style="display: none;" id="x64-url">
+                            <label for="64u">x64 Installer URL:</label>
+                            <input type="text" id="64u" name="x64_url" value="null">
+                    
                     </div>
+
                     <div>
                             <label for="inst-type">Type of Installer:</label>
                             <select id="inst-type" name="inst_type" required>
@@ -59,8 +65,8 @@
                             <label for="tp">Target Path(for zip):</label>
                             <input type="text" id="tp" name="target_path" value="null">
                     
-                    </div>
-                    <div class="buton">
+                    
+                    <div class="button">
                             <button type="submit">Create Registry</button>
                     </div>
                 </form>
@@ -69,7 +75,8 @@
                 <script type="text/javascript">
 
 			document.getElementById("inst-type").onchange = function (){if(document.getElementById("inst-type").value=="zip"){document.getElementById("target-path").style = "";} else {document.getElementById("target-path").style = "display: none;"}; document.getElementById("target-path").required = "required";};
-			
+			document.getElementById("arch").onchange = function (){if(document.getElementById("arch").value=="separate"){document.getElementById("x64-url").style = "";} else {document.getElementById("x64-url").style = "display: none;"}; document.getElementById("x64-url").required = "required";};
+
                 </script>
         </body>
 

@@ -1,4 +1,3 @@
-//see my google-fu in action!
 function getUrlVars() {
 	var map = {};
 	var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
@@ -9,8 +8,10 @@ function getUrlVars() {
 var uvars = getUrlVars();
 var docLoaded = function(){
 if(uvars["form_submitted"] == "true") {
-var aname = uvars["app_name"], aurl = uvars["inst_url"], atype = uvars["inst_type"], aver = uvars["inst_version"];
-        var atarget = uvars["target_path"];
+	document.getElementById("cpButton").hidden = false;
+	var aname = uvars["app_name"], aurl = uvars["inst_url"], atype = uvars["inst_type"], aver = uvars["inst_version"];
+	var atarget = uvars["target_path"];
+	var a64url = uvars["x64_url"];
         document.getElementById("app-form").style = "display: none;";
         var xhttp = new XMLHttpRequest(), regJSON;
         xhttp.onreadystatechange = function() {
@@ -20,7 +21,9 @@ var aname = uvars["app_name"], aurl = uvars["inst_url"], atype = uvars["inst_typ
 				url: decodeURIComponent(aurl), 
 				type: atype, 
 				ver: aver, 
-				target: decodeURIComponent(atarget)});
+				target: decodeURIComponent(atarget),
+				url64: decodeURIComponent(a64url)
+			});
                 }
         };
         xhttp.open("GET", "https://rawgit.com/just-install/registry/master/just-install.json", true);
@@ -34,6 +37,7 @@ var modifyAndDisplayRegistry = function(registryJSON, add){
         console.log(registry);
 	registry.packages[add.name] = {installer: {kind: add.type, x86: add.url}, version: add.ver};
 	if(add.target != "null") registry.packages[add.name].installer.options = {destination: add.target};
+	if(add.url64 != "null") registry.packages[add.name].installer.x86_64 = add.url64;
 	document.getElementById("registry").innerHTML = orderedStringify(registry);
 	hljs.highlightBlock(document.getElementById("registry"));
 }
